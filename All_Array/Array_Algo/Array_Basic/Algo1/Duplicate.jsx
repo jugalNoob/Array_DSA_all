@@ -1,25 +1,42 @@
 
-:::::::::::::::: ......................................
-|||||||||| Remove duplicates array||||||||
+
+
 function test(data) {
-    if (data.length === 0) return 0;
+    if (data.length === 0) {
+        console.log("Empty array received. Exiting.");
+        return 0;
+    }
+
+    console.log("Initial data:", [...data]);
 
     let i = 0;
     const duplicates = [];
 
+    console.log("\n🌀 Starting duplicate removal process...\n");
+
     for (let j = 0; j < data.length; j++) {
-     
+        console.log(`🔍 Comparing data[i=${i}] = ${data[i]} with data[j=${j}] = ${data[j]}`);
+
         if (data[i] !== data[j]) {
             i++;
             data[i] = data[j];
+            console.log(`✅ Unique found. Moved ${data[j]} to index ${i}`);
         } else if (i !== j) {
             duplicates.push(data[j]);
+            console.log(`⚠️ Duplicate detected: ${data[j]} (at index ${j})`);
         }
+
+        console.log(`Current state of array: ${data}`);
+        console.log("---");
     }
 
     let length = i + 1;
 
-    console.log(length);
+    console.log("\n✅ Processing complete.");
+    console.log("📌 Final length of unique elements:", length);
+    console.log("📌 Final unique elements:", data.slice(0, length));
+    console.log("📌 Duplicate elements found:", duplicates);
+    console.log("📌 Full array state:", data);
 
     return {
         length,
@@ -29,15 +46,16 @@ function test(data) {
     };
 }
 
-let data = [0, 1, 1, 2, 2 , 3];
-
+// Sample data
+let data = [0, 1, 1, 2, 2, 3];
 let result = test(data);
 
-console.log(`Length of unique elements: ${result.length}`);
-console.log(`Array with unique elements: ${result.unique}`);
-console.log(`Full array after removing duplicates: ${result.datas}`);
-console.log(`Duplicate elements: ${result.duplicates}`);
-
+// Final result log
+console.log("\n🎯 Final Result Summary:");
+console.log("Length of unique elements:", result.length);
+console.log("Unique elements:", result.unique);
+console.log("Full array after in-place update:", result.datas);
+console.log("Duplicates found:", result.duplicates);
 
  function dupl(data) {
     let isDuplicate = false;

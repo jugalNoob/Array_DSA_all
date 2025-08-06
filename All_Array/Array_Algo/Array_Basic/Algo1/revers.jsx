@@ -60,9 +60,33 @@ end--     → 1 (loop ends)
 console.log(data)
 
 
+////////----------------------->>>>> Recission ------------------>>
+
+var count=0
+
+function Reverse(data, start = 0, end = data.length - 1) {
+    if (start >= end) {
+        return data;
+    }
+
+    // Swap
+    let temp = data[start];
+    data[start] = data[end];
+    data[end] = temp;
+
+    // Recursive call
+
+    console.log(count++)
+    
+    return Reverse(data, start + 1, end - 1);
+}
+
+let data = [100, 80, 90, 70, 60, 20, 10];
+console.log(Reverse(data)); // [10, 20, 60, 70, 90, 80, 100]
 
 
 
+//------------------->>. Revsion -------------
 
 let data = [10, 20, 30, 40];  // new methods 
 let start = 0;

@@ -1,27 +1,36 @@
-5::Two Pointers with a Single Loop:
 function twoSum(nums, target) {
+  console.log("📥 Input array:", nums);
+  console.log("🎯 Target sum:", target);
+
   let left = 0;
   let right = nums.length - 1;
 
+  console.log("\n🔁 Starting Two-Pointer Search...\n");
+
   while (left < right) {
     const sum = nums[left] + nums[right];
+    console.log(`🔎 Trying: nums[${left}] = ${nums[left]} + nums[${right}] = ${nums[right]} → sum = ${sum}`);
 
     if (sum === target) {
-      return [left, right]; // Indices of the pair
+      console.log(`✅ Found! Indices: [${left}, ${right}] → Values: [${nums[left]}, ${nums[right]}]`);
+      return [left, right];
     } else if (sum < target) {
+      console.log(`📉 Sum < target. Moving left pointer: ${left} → ${left + 1}`);
       left++;
     } else {
+      console.log(`📈 Sum > target. Moving right pointer: ${right} → ${right - 1}`);
       right--;
     }
   }
 
-  return null; // If no pair is found
+  console.log("❌ No pair found that adds up to the target.");
+  return null;
 }
-const nums = [2, 7, 11, 15];
+
+// ✅ Example usage
+const nums = [2, 7, 11, 15]; // Must be sorted
 const target = 9;
-console.log(twoSum(nums, target)); // Output: [0, 1]
-
-
+console.log("\n🔚 Result:", twoSum(nums, target));
 
 
 
