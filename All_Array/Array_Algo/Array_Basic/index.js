@@ -1,17 +1,45 @@
-function sumOfNatural(num) {
-    console.log("📥 Input number:", num);
 
-    // 🧠 Using formula: n * (n + 1) / 2
-    let sum = (num * (num + 1)) / 2;
 
-    console.log(`📊 Sum of first ${num} natural numbers = ${sum}`);
-    return sum;
-}
 
-// 🚀 Example usages
-sumOfNatural(5);   // 1 + 2 + 3 + 4 + 5 = 15
-sumOfNatural(10);  // 1 + 2 + ... + 10 = 55
-sumOfNatural(8);   // 1 + 2 + ... + 8 = 36
+
+
+// function findMissingNumber(data) {
+//     console.log("📥 Input array:", data);
+//     let sum = 0;
+
+//     console.log("🔢 Calculating actual sum of elements in the array...");
+//     for (let i = 0; i < data.length; i++) {
+//         sum += data[i];
+//         console.log(`➡️ Adding data[${i}] = ${data[i]}, running sum = ${sum}`);
+//     }
+
+//     const n = data.length; // Since one number is missing, n should be length of array
+//     const expectedSum = (n * (n + 1)) / 2;
+//     console.log(`📊 Expected sum from 0 to ${n}: ${expectedSum}`);
+
+//     return expectedSum - sum;
+
+//         // return num.length * (num.length + 1) / 2 - 
+// }
+
+// console.log("✅ Missing number is:", findMissingNumber([0, 1, 2, 4]));
+
+
+// function sumOfNatural(num) {
+//     console.log("📥 Input number:", num);
+
+//     // 🧠 Using formula: n * (n + 1) / 2
+//     let sum = (num * (num + 1)) / 2;
+
+//     console.log(`📊 Sum of first ${num} natural numbers = ${sum}`);
+//     return sum;
+// }
+
+// // 🚀 Example usages
+// sumOfNatural(5);   // 1 + 2 + 3 + 4 + 5 = 15
+// sumOfNatural(10);  // 1 + 2 + ... + 10 = 55
+// sumOfNatural(8);   // 1 + 2 + ... + 8 = 36
+
 
 
 

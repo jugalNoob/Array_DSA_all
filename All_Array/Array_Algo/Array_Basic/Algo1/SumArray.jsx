@@ -47,7 +47,7 @@ function maxSubArray(nums) {
 
 console.log("Final max subarray sum =", maxSubArray([5, 4, -1, 7, 8]));
 
-
+// console.log("Final max subarray sum =", maxSubArray([-1 , -1,5, 4, -1, 7, 8 , ]));
 
 
 // 🧠 FOR LOOP:

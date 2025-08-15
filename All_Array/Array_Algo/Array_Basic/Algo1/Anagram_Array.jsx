@@ -50,3 +50,43 @@ function isAnagram(s, t) {
 
 console.log(isAnagram("listen", "silent")); // true
 console.log(isAnagram("hello", "world"));   // false
+
+
+
+
+function annygram(arr1, arr2) {
+    // If lengths differ, can't be an anagram
+    if (arr1.length !== arr2.length) {
+        return false;
+    }
+
+    let obj = {};
+
+    // Count frequency of elements in arr1
+    for (let i = 0; i < arr1.length; i++) {
+        let str1 = arr1[i];
+        if (obj[str1]) {
+            obj[str1]++; // If already exists, increment
+        } else {
+                obj[str1] = 1; // If not, set to 1
+        }
+    }
+
+    // Check against arr2
+    for (let i = 0; i < arr2.length; i++) {
+        let str2 = arr2[i];
+        if (!obj[str2]) {
+            return false; // Element not found or count is 0
+        } else {
+            obj[str2]--; // Decrement count
+        }
+    }
+
+    return true;
+}
+
+// Test cases
+console.log(annygram(["h", "e", "l", "l", "o"], ["o", "l", "l", "e", "h"])); // true
+console.log(annygram([1, 2, 3]
+      , [3, 2, 1])); // true
+console.log(annygram([1, 2, 3], [3, 2, 1, 0])); // false

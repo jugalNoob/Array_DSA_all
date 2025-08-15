@@ -1,4 +1,6 @@
 
+https://www.youtube.com/watch?v=5mEwh4MfwB4
+
 1:::Sum of natural number:::::::::::::::::::::::::::::
 function sumofnatural(num){
     // let sum=0;
